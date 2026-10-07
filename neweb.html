@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Monish S - Resume</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #dfe5e8;
+            color: #17202a;
+        }
+
+        /* A4 SINGLE PAGE */
+
+        .resume {
+            width: 210mm;
+            height: 297mm;
+            margin: 20px auto;
+            background: white;
+
+            display: grid;
+            grid-template-columns: 32% 68%;
+
+            overflow: hidden;
+
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
+        }
+
+        /* LEFT SIDE */
+
+        .left {
+            background: #081b2a;
+            color: white;
+            padding: 25px 20px;
+        }
+
+        .profile {
+            text-align: center;
+            margin-bottom: 22px;
+        }
+
+        .profile img {
+            width: 145px;
+            height: 170px;
+
+            object-fit: cover;
+            object-position: center;
+
+            border-radius: 15px;
+
+            border: 4px solid #35c7e8;
+
+            margin-bottom: 15px;
+        }
+
+        .profile h1 {
+            font-size: 25px;
+            letter-spacing: 1px;
+        }
+
+        .profile h1 span {
+            color: #35c7e8;
+        }
+
+        .profile h3 {
+            font-size: 12px;
+            font-weight: normal;
+            color: #b9d0dc;
+            margin-top: 7px;
+            line-height: 1.5;
+        }
+
+        .left-section {
+            margin-top: 22px;
+        }
+
+        .left-title {
+            color: #35c7e8;
+            font-size: 14px;
+            font-weight: bold;
+
+            border-bottom: 1px solid #244052;
+
+            padding-bottom: 6px;
+            margin-bottom: 10px;
+        }
+
+        .contact-item {
+            font-size: 10.5px;
+            color: #c7d5dd;
+            margin-bottom: 8px;
+            word-break: break-word;
+        }
+
+        .skill {
+            display: inline-block;
+
+            padding: 5px 7px;
+            margin: 3px 2px;
+
+            background: #102d40;
+            border: 1px solid #24495d;
+
+            color: #c8edf5;
+
+            border-radius: 5px;
+
+            font-size: 9px;
+        }
+
+        .left ul {
+            padding-left: 15px;
+        }
+
+        .left li {
+            color: #c7d5dd;
+            font-size: 10px;
+            margin-bottom: 6px;
+        }
+
+        /* RIGHT SIDE */
+
+        .right {
+            padding: 25px 28px;
+        }
+
+        .top-heading {
+            border-bottom: 3px solid #35c7e8;
+            padding-bottom: 12px;
+            margin-bottom: 15px;
+        }
+
+        .top-heading h2 {
+            font-size: 26px;
+            color: #17202a;
+        }
+
+        .top-heading p {
+            color: #64727c;
+            font-size: 11px;
+            margin-top: 4px;
+        }
+
+        .section {
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+            font-size: 14px;
+            font-weight: bold;
+
+            color: #087d9b;
+
+            border-left: 4px solid #35c7e8;
+
+            padding-left: 8px;
+
+            margin-bottom: 8px;
+        }
+
+        .objective {
+            font-size: 10.5px;
+            color: #4d5a63;
+            line-height: 1.55;
+            text-align: justify;
+        }
+
+        /* EDUCATION */
+
+        .education {
+            border-left: 2px solid #d7e5e9;
+            padding-left: 12px;
+        }
+
+        .education h3 {
+            font-size: 12px;
+            color: #17202a;
+        }
+
+        .education h4 {
+            font-size: 10px;
+            color: #087d9b;
+            margin-top: 3px;
+        }
+
+        .education p {
+            font-size: 9.5px;
+            color: #64727c;
+            margin-top: 3px;
+        }
+
+        /* PROJECTS */
+
+        .project {
+            margin-bottom: 9px;
+            padding: 9px 11px;
+
+            background: #f4fafc;
+
+            border-radius: 7px;
+
+            border-left: 3px solid #35c7e8;
+        }
+
+        .project h3 {
+            font-size: 11.5px;
+            color: #17202a;
+            margin-bottom: 3px;
+        }
+
+        .project p {
+            font-size: 9.5px;
+            color: #59666f;
+            line-height: 1.4;
+        }
+
+        .project-tags {
+            margin-top: 4px;
+        }
+
+        .project-tag {
+            display: inline-block;
+
+            background: #dff5fa;
+            color: #087d9b;
+
+            padding: 3px 6px;
+
+            border-radius: 4px;
+
+            font-size: 8px;
+
+            margin-right: 3px;
+        }
+
+        /* TWO COLUMNS */
+
+        .two-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        /* ACHIEVEMENTS */
+
+        .achievement-list {
+            padding-left: 15px;
+        }
+
+        .achievement-list li {
+            font-size: 9.5px;
+            color: #59666f;
+            margin-bottom: 5px;
+        }
+
+        /* FOOTER */
+
+        .footer {
+            margin-top: 13px;
+
+            padding-top: 8px;
+
+            border-top: 1px solid #dce4e7;
+
+            text-align: center;
+
+            font-size: 8.5px;
+
+            color: #7a858c;
+        }
+
+        /* PRINT */
+
+        @media print {
+
+            body {
+                background: white;
+            }
+
+            .resume {
+                width: 210mm;
+                height: 297mm;
+
+                margin: 0;
+
+                box-shadow: none;
+            }
+        }
+
+        /* MOBILE */
+
+        @media screen and (max-width: 800px) {
+
+            body {
+                background: #081b2a;
+            }
+
+            .resume {
+                width: 100%;
+                height: auto;
+
+                margin: 0;
+
+                display: block;
+            }
+
+            .left {
+                padding: 30px;
+            }
+
+            .right {
+                padding: 30px;
+            }
+
+            .two-columns {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="resume">
+
+    <!-- ================= LEFT SIDE ================= -->
+
+    <aside class="left">
+
+        <div class="profile">
+
+            <!-- YOUR PHOTO -->
+            <img src="WhatsApp Image 2026-06-13 at 22.16.31.jpeg" alt="Monish S">
+
+            <h1>
+                MONISH <span>S</span>
+            </h1>
+
+            <h3>
+                B.Tech CSE<br>
+                Cyber Security
+            </h3>
+
+        </div>
+
+
+        <!-- CONTACT -->
+
+        <div class="left-section">
+
+            <div class="left-title">
+                CONTACT
+            </div>
+
+            <div class="contact-item">
+                📍 Tamil Nadu, India
+            </div>
+
+            <div class="contact-item">
+                📧 yourmail@gmail.com
+            </div>
+
+            <div class="contact-item">
+                📱 +91 XXXXX XXXXX
+            </div>
+
+            <div class="contact-item">
+                🔗 linkedin.com/in/yourprofile
+            </div>
+
+            <div class="contact-item">
+                💻 github.com/yourprofile
+            </div>
+
+        </div>
+
+
+        <!-- TECHNICAL SKILLS -->
+
+        <div class="left-section">
+
+            <div class="left-title">
+                TECHNICAL SKILLS
+            </div>
+
+            <span class="skill">Python</span>
+            <span class="skill">Java</span>
+            <span class="skill">C</span>
+
+            <span class="skill">HTML</span>
+            <span class="skill">CSS</span>
+            <span class="skill">JavaScript</span>
+
+            <span class="skill">React</span>
+            <span class="skill">Git</span>
+            <span class="skill">GitHub</span>
+
+            <span class="skill">AI</span>
+            <span class="skill">Data Analysis</span>
+            <span class="skill">Cyber Security</span>
+
+        </div>
+
+
+        <!-- SOFT SKILLS -->
+
+        <div class="left-section">
+
+            <div class="left-title">
+                SOFT SKILLS
+            </div>
+
+            <ul>
+
+                <li>Problem Solving</li>
+
+                <li>Teamwork</li>
+
+                <li>Leadership</li>
+
+                <li>Communication</li>
+
+                <li>Creativity</li>
+
+                <li>Time Management</li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- INTERESTS -->
+
+        <div class="left-section">
+
+            <div class="left-title">
+                INTERESTS
+            </div>
+
+            <ul>
+
+                <li>Cyber Security</li>
+
+                <li>Artificial Intelligence</li>
+
+                <li>Data Analytics</li>
+
+                <li>Software Development</li>
+
+                <li>Entrepreneurship</li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- LANGUAGES -->
+
+        <div class="left-section">
+
+            <div class="left-title">
+                LANGUAGES
+            </div>
+
+            <ul>
+
+                <li>Tamil</li>
+
+                <li>English</li>
+
+            </ul>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= RIGHT SIDE ================= -->
+
+    <main class="right">
+
+
+        <!-- HEADER -->
+
+        <div class="top-heading">
+
+            <h2>
+                COMPUTER SCIENCE & CYBER SECURITY
+            </h2>
+
+            <p>
+                Student • Developer • Data Analyst • Technology Enthusiast
+            </p>
+
+        </div>
+
+
+        <!-- CAREER OBJECTIVE -->
+
+        <section class="section">
+
+            <div class="section-title">
+                CAREER OBJECTIVE
+            </div>
+
+            <p class="objective">
+
+                Motivated Computer Science student specializing in
+                Cyber Security with strong interest in Software
+                Development, Artificial Intelligence, Data Analytics
+                and emerging technologies. Passionate about learning,
+                building innovative projects, participating in
+                hackathons and solving real-world problems through
+                technology.
+
+            </p>
+
+        </section>
+
+
+        <!-- EDUCATION -->
+
+        <section class="section">
+
+            <div class="section-title">
+                EDUCATION
+            </div>
+
+            <div class="education">
+
+                <h3>
+                    B.Tech – Computer Science & Engineering
+                </h3>
+
+                <h4>
+                    Specialization: Cyber Security
+                </h4>
+
+                <p>
+                    Currently pursuing undergraduate studies with
+                    focus on programming, cyber security,
+                    artificial intelligence and software development.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- PROJECTS -->
+
+        <section class="section">
+
+            <div class="section-title">
+                PROJECTS
+            </div>
+
+
+            <!-- PROJECT 1 -->
+
+            <div class="project">
+
+                <h3>
+                    VisionVoice
+                </h3>
+
+                <p>
+                    Accessibility-focused project designed to assist
+                    people with visual disabilities through
+                    voice-based assistance and intelligent technology.
+                </p>
+
+                <div class="project-tags">
+
+                    <span class="project-tag">AI</span>
+
+                    <span class="project-tag">Voice</span>
+
+                    <span class="project-tag">Python</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROJECT 2 -->
+
+            <div class="project">
+
+                <h3>
+                    Automated Invoice & Billing System
+                </h3>
+
+                <p>
+                    Web-based system that automates invoice generation
+                    and billing for freelancers, reducing repetitive
+                    manual work.
+                </p>
+
+                <div class="project-tags">
+
+                    <span class="project-tag">HTML</span>
+
+                    <span class="project-tag">CSS</span>
+
+                    <span class="project-tag">JavaScript</span>
+
+                    <span class="project-tag">Python</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROJECT 3 -->
+
+            <div class="project">
+
+                <h3>
+                    Resume-to-Internship Recommendation System
+                </h3>
+
+                <p>
+                    Smart platform concept that analyzes resume skills
+                    and suggests suitable internship opportunities.
+                </p>
+
+                <div class="project-tags">
+
+                    <span class="project-tag">React</span>
+
+                    <span class="project-tag">Python</span>
+
+                    <span class="project-tag">AI</span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- TWO COLUMN SECTION -->
+
+        <div class="two-columns">
+
+
+            <!-- HACKATHONS -->
+
+            <section class="section">
+
+                <div class="section-title">
+                    HACKATHONS
+                </div>
+
+                <ul class="achievement-list">
+
+                    <li>
+                        Participated in technical hackathons.
+                    </li>
+
+                    <li>
+                        Worked collaboratively in teams.
+                    </li>
+
+                    <li>
+                        Developed technology-based solutions.
+                    </li>
+
+                    <li>
+                        Presented innovative project ideas.
+                    </li>
+
+                    <li>
+                        Hackathon wins and awards.
+                    </li>
+
+                </ul>
+
+            </section>
+
+
+            <!-- EXPERIENCE -->
+
+            <section class="section">
+
+                <div class="section-title">
+                    EXPERIENCE
+                </div>
+
+                <ul class="achievement-list">
+
+                    <li>
+                        Data analysis and interpretation.
+                    </li>
+
+                    <li>
+                        Data visualization and reporting.
+                    </li>
+
+                    <li>
+                        Problem solving using technology.
+                    </li>
+
+                    <li>
+                        Project development and research.
+                    </li>
+
+                </ul>
+
+            </section>
+
+        </div>
+
+
+        <!-- ACHIEVEMENTS -->
+
+        <section class="section">
+
+            <div class="section-title">
+                ACHIEVEMENTS
+            </div>
+
+            <ul class="achievement-list">
+
+                <li>
+                    Participated in technical hackathons and
+                    collaborative technology events.
+                </li>
+
+                <li>
+                    Developed academic projects involving AI,
+                    web development and accessibility.
+                </li>
+
+                <li>
+                    Continuously learning Cyber Security,
+                    Data Analytics and emerging technologies.
+                </li>
+
+            </ul>
+
+        </section>
+
+
+        <!-- CAREER GOAL -->
+
+        <section class="section">
+
+            <div class="section-title">
+                CAREER GOAL
+            </div>
+
+            <p class="objective">
+
+                To build a strong career in technology, gain
+                professional experience, develop innovative
+                products and eventually become an entrepreneur
+                by creating technology-based solutions for
+                real-world problems.
+
+            </p>
+
+        </section>
+
+
+        <!-- FOOTER -->
+
+        <div class="footer">
+
+            MONISH S &nbsp; | &nbsp;
+            B.Tech CSE – Cyber Security
+            &nbsp; | &nbsp;
+            Resume 2026
+
+        </div>
+
+    </main>
+
+</div>
+
+</body>
+</html>
